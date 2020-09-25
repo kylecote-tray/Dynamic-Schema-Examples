@@ -2,6 +2,12 @@
 var DEPENDENT_VALUES = [{env:'meetingOrWebinarSelector',value:'meeting'},{env:'newOrExisting',value:false}];
 
 tray.on('CONFIG_SLOT_MOUNT', async ({ event, previousWizardState, previousSlotState }) => {
+    const isMySlot = event.data.externalId === tray.env.slotExternalId;   
+    if (!isMySlot){
+        return;
+    }
+    console.log(previousWizardState);
+    console.log(previousSlotState);
     if(!meetsDependencies(event,previousWizardState,DEPENDENT_VALUES)){
         return{
             ...previousSlotState,
