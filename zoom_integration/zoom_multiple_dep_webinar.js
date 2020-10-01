@@ -1,5 +1,5 @@
 //Globals for slot
-var DEPENDENT_VALUES = [{env:'meetingOrWebinarSelector',value:'meeting'},{env:'newOrExisting',value:false}];
+var DEPENDENT_VALUES = [{env:'meetingOrWebinarSelector',value:'webinar'},{env:'newOrExisting',value:false}];
 var currentPage = 1;
 var maxPage = undefined;
 var CACHE = {};
@@ -8,7 +8,6 @@ tray.on('CONFIG_SLOT_MOUNT', async ({ event, previousWizardState, previousSlotSt
     if(!meetsDependencies(event,previousWizardState,DEPENDENT_VALUES)){
         return{
             ...previousSlotState,
-            value:undefined,
             status:'HIDDEN'
         };
     }
@@ -16,20 +15,20 @@ tray.on('CONFIG_SLOT_MOUNT', async ({ event, previousWizardState, previousSlotSt
 });
 
 tray.on('CONFIG_SLOT_VALUE_CHANGED', async ({ event, previousWizardState, previousSlotState }) => {
+    const getValueOfDependent = event.data.value;
     const isDependentSlot = DEPENDENT_VALUES.filter(dep => tray.env[dep.env] === event.data.externalId).length >0;
     const isMySlot = event.data.externalId === tray.env.slotExternalId;
     if (!(isDependentSlot || isMySlot)){
         return;
     }
     if(!meetsDependencies(event,previousWizardState,DEPENDENT_VALUES)){
-      return{
-           ...previousSlotState,
-           value:undefined,
-           status:'HIDDEN'
-       };
+        return{
+            ...previousSlotState,
+            value:undefined,
+            status:'HIDDEN'
+        };
     }
     const error_key = String(previousWizardState.values[tray.env.zoomAuthId] + '_errors');
-
     if(CACHE[error_key] || (isMySlot && event.data.value ==='ERROR')){
         return getErrorResponse(previousSlotState);
     }
@@ -52,12 +51,10 @@ tray.on('CONFIG_SLOT_VALUE_CHANGED', async ({ event, previousWizardState, previo
         ...event.data.value,
         status: 'VISIBLE'
     };
-
-
 });
 
 tray.on('CONFIG_SLOT_STATUS_CHANGED', async ({ event, previousWizardState, previousSlotState }) => {
-    const isMySlot = event.data.externalId === tray.env.slotExternalId;
+    const isMySlot = event.data.externalId === tray.env.slotExternalId;   
     if (!isMySlot){
         return;
     }
@@ -70,6 +67,7 @@ tray.on('CONFIG_SLOT_STATUS_CHANGED', async ({ event, previousWizardState, previ
     if (event.data.status === 'LOADING') {
         return loadMeetingRecords(previousWizardState,previousSlotState);
     }
+
 });
 
 async function loadMeetingRecords(previousWizardState,previousSlotState){
@@ -84,24 +82,25 @@ async function loadMeetingRecords(previousWizardState,previousSlotState){
                 "page_size": 300,
                 "user_id": userId
             };
-
+        
             //Make a call to the list users endpoint
-            const fetchMeetingRecords = await tray.callConnector({
+            const webinarRecords = await tray.callConnector({
                 connector: 'zoom',
                 version: '1.5',
-                operation: 'list_meetings',
+                operation: 'list_webinars',
                 // we are able to use the authentication from any service just like in the workflow builder
                 authId: zoomAuthId,
                 input: inputData
             });
+        
             //Format the endpoint for selection
-            const jsonResp = JSON.parse(fetchMeetingRecords);
-            const meetingsMap = jsonResp.meetings.map((userObject)=> {
+            const jsonResp = JSON.parse(webinarRecords);
+            const webinarsMap = jsonResp.webinars.map((userObject)=> {
                 let text = userObject.topic + ' (';
                 if (userObject.start_time) {
                     text += userObject.start_time.substr(0, 10) + ', ';
                 }
-                text += 'Meeting ID ' + userObject.id + ')';
+                text += 'Webinar ID ' + userObject.id + ')';
                 return (
                     {
                         value: String(userObject.id),
@@ -111,23 +110,22 @@ async function loadMeetingRecords(previousWizardState,previousSlotState){
             }).sort((firstEl, secondEl)=> (firstEl.text > secondEl.text ? 1: -1));
             maxPage = jsonResp.page_count;
             if (currentPage > 1){
-                meetingsMap.unshift({'text':'Previous Users',value:'PREVIOUS'});
+                webinarsMap.unshift({'text':'Previous Users',value:'PREVIOUS'});
             }
             if (currentPage < maxPage){
-                meetingsMap.unshift({'text':'More Users',value:'MORE'});
+                webinarsMap.unshift({'text':'More Users',value:'MORE'});
             }
-            CACHE[cache_key] = meetingsMap;
+            CACHE[cache_key] = webinarsMap;
         }
         if(CACHE[error_key]){
             delete CACHE[error_key];
         }
-
         //Return to display
         return{
             ...previousSlotState,
             status:'VISIBLE',
             jsonSchema: {
-                "title": "Select a Meeting",
+                "title": "Select a Webinar",
                 "default":"",
                 "type":"string",
                 "enum":CACHE[cache_key]
@@ -135,19 +133,18 @@ async function loadMeetingRecords(previousWizardState,previousSlotState){
         };
     }
     catch(ex){
-        CACHE[error_key] = 'Error loading meetings. Please attempt to refresh.';
+        CACHE[error_key] = 'Error when loading Webinars. Please attempt to refresh.';
         return getErrorResponse(previousSlotState)
     }
     
 }
 
-
 function meetsDependencies(event,previousWizardState,dependencies){
     return dependencies.filter(dep => {
         const externalId = tray.env[dep.env];
-        if (previousWizardState.values[externalId] == dep.value || (externalId == event.data.externalId && event.data.value == dep.value))
+        if(previousWizardState.values[externalId] == dep.value || (externalId == event.data.externalId && event.data.value == dep.value))
             return dep;
-    }).length == dependencies.length; 
+    }).length == dependencies.length;
 }
 
 function getErrorResponse(previousSlotState){
@@ -159,10 +156,10 @@ function getErrorResponse(previousSlotState){
             message: 'Error fetching Zoom Meetings. Please attempt to refresh.'
         },
         jsonSchema: {
-            "title": "Zoom Meetings",
+            "title": "Zoom Webinars",
             "default":"",
             "type":"string",
-            "enum":[{text:'Error fetching meeting records. Hit "Refresh" below to try again.',value:'ERROR'},
+            "enum":[{text:'Error fetching webinar records. Hit "Refresh" below to try again.',value:'ERROR'},
             {text:'Refresh',value:'REFRESH'}]
         },
         status:'VISIBLE'
