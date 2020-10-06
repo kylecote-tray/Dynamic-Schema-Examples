@@ -7,6 +7,8 @@
 const TABLE_TITLE = 'Greenhouse >> Personio Mappings';
 const LHS_TITLE = 'Greenhouse Field';
 const RHS_TITLE = 'Personio Attribute';
+const REQUIRED_MAPPINGS = [{'value':'first_name'},{'value':'last_name'},{'value':'email'}]
+const OPTIONAL_MAPPINGS = [{'value':'department'}]
 
 //You can customize the left-hand-side objects/fields used to be passed down into population (see leftHandSideFieldsEnum)
 const lhsStaticObjectFields = {
@@ -41,6 +43,18 @@ const lhsStaticObjectFields = {
             "value":"website_addresses"},
     ]
 };
+
+const rhsStaticFields = [{'text':'Email','value':'email'},
+    {'text':'First Name','value':'first_name'},
+    {'text':'Last Name','value':'last_name'},
+    {'text':'Gender','value':'gender'},
+    {'text':'Position','value':'position'},
+    {'text':'Hire Date','value':'hire_date'},
+    {'text':'Weekly Working Hours','value':'weekly_working_hours'},
+    {'text':'Subcompany','value':'subcompany'},
+    {'text':'Department','value':'department'},
+    {'text':'Office','value':'office'}
+];
 
 //Left hand side of Table customization
 //lhsAuthId - designated inside `handleEvent` and used in callConnector calls in method
@@ -77,7 +91,15 @@ async function getRightHandSideFieldsEnum(rhsAuthId){
             text:curField.label,
             value:curField.key
         }
-    }).sort((first,second)=>(first.text > second.text ? 1 : -1));
+    });
+    let filteredStatics = rhsStaticFields.map((staticField)=>{
+        if(fields.filter(field => field.value == staticField.value).length == 0)
+        {
+            return staticField;
+        }
+    });
+    fields.push(...filteredStatics);
+    fields.sort((first,second)=>(first.text > second.text ? 1 : -1));
     return {
         type:'string',
         enum:fields};
@@ -118,6 +140,7 @@ function getPersonioFields(personioAuthId){
     return CACHE[cacheKey];
 }
 
+
 //=============--------------------=============
 //No need to change elements below this line
 //=============--------------------=============
@@ -134,12 +157,12 @@ async function handleEvent({ event, previousSlotState, previousWizardState }) {
     const lhsAuthId = getValue(event.data,previousWizardState.values,tray.env.lhsAuthExternalId);
     const rhsAuthId = getValue(event.data,previousWizardState.values,tray.env.rhsAuthExternalId);
     const isMySlot = event.data.externalId === tray.env.slotExternalId;
-    
     if(!isMySlot){
         return;
     }
     else if (event.type === 'CONFIG_SLOT_VALUE_CHANGED' && !doesNewValueRequireJsonSchemaUpdate(event.data, previousSlotState)){
-        let tableValues = getValue(event.data, previousWizardState.values, tray.env.slotExternalId);
+        const lastTableState = getValue(event.data, previousWizardState.values, tray.env.slotExternalId);
+        let tableValues = getTableValuesAfterEnforcingRules(lastTableState);
         return {
             ...previousSlotState,
             value: tableValues,
@@ -147,8 +170,7 @@ async function handleEvent({ event, previousSlotState, previousWizardState }) {
     }
     
     const lastTableState = getValue(event.data, previousWizardState.values, tray.env.slotExternalId);
-    let tableValues = lastTableState === undefined? []: lastTableState;
-    
+    let tableValues = getTableValuesAfterEnforcingRules(lastTableState);
     const jsonSchema = await getTableSchema({
         lhsAuthId,
         rhsAuthId,
@@ -197,6 +219,34 @@ async function getRowSchema(configMetaData){
         },
         additionalProperties: false
     }
+}
+
+//Gets the table values after enforcing the RHS/LHS rules
+function getTableValuesAfterEnforcingRules(tableValues){
+    let definedTableState = tableValues === undefined? OPTIONAL_MAPPINGS: tableValues;
+    for(const curReqIndex in REQUIRED_MAPPINGS){
+        const curMap = REQUIRED_MAPPINGS[curReqIndex];
+        let curMapKey = curMap.hasOwnProperty('key') ? curMap['key']:undefined;
+        let curMapValue = curMap.hasOwnProperty('value') ? curMap['value']:undefined;
+        let requiredMatch = [];
+        //Full map search
+        if(curMapKey && curMapValue){
+            requiredMatch = definedTableState.filter(filterRow => filterRow == curMap);
+        }
+        //Key Search
+        else if (curMapKey){
+            requiredMatch = definedTableState.filter(filterRow => (filterRow != null && filterRow.hasOwnProperty('key') && filterRow.key == curMapKey));
+        }
+        //Value Search
+        else{
+            requiredMatch = definedTableState.filter(filterRow => (filterRow != null && filterRow.hasOwnProperty('value') && filterRow.value == curMapValue));
+        }
+        if(requiredMatch.length == 0){
+            definedTableState.unshift(curMap);
+        }
+    }
+    return definedTableState.filter(item=> (item === null || !((item.hasOwnProperty('key') && item.key == null)
+        &&(item.hasOwnProperty('value') && item.value == null))));
 }
 
 // Util function to get the latest value of a specific slot
