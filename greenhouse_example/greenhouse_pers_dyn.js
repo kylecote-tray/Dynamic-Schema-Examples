@@ -7,8 +7,8 @@
 const TABLE_TITLE = 'Greenhouse >> Personio Mappings';
 const LHS_TITLE = 'Greenhouse Field';
 const RHS_TITLE = 'Personio Attribute';
-const REQUIRED_MAPPINGS = [{'value':'first_name'},{'value':'last_name'},{'value':'email'}]
-const OPTIONAL_MAPPINGS = [{'value':'department'}]
+const REQUIRED_MAPPINGS = [{'value':'first_name'},{'value':'last_name'},{'value':'email'}];
+const OPTIONAL_MAPPINGS = [{'value':'department'}];
 
 //You can customize the left-hand-side objects/fields used to be passed down into population (see leftHandSideFieldsEnum)
 const lhsStaticObjectFields = {
