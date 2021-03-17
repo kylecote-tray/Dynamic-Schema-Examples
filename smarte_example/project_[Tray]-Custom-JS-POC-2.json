@@ -1,0 +1,1940 @@
+ {
+  "export_type": "project",
+  "projects": [
+    {
+      "id": "d3e085a3-fa53-4119-9a6b-4ea267707f5d",
+      "name": "[Tray] Custom JS POC 2",
+      "config": {
+        "account_mapping_load_fields": {},
+        "salesforce_contact_fields": [],
+        "map_account": true,
+        "account_mapping": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "contact_mapping": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "map_contact": true,
+        "map_lead": true,
+        "contact_mapping_load_fields": {},
+        "salesforce_account_fields": [],
+        "ig_fields": [],
+        "lead_mapping_load_fields": {},
+        "lead_mapping": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "salesforce_lead_fields": []
+      },
+      "workflows": [
+        "4bd6e18a-fdc7-4063-a210-f6740c1dfb41",
+        "4d78ecd8-a7bf-4cb9-a398-d5eae5215666"
+      ],
+      "dependencies": []
+    }
+  ],
+  "solution": {
+    "id": "d5bf3a19-b2c5-4a2a-8a6d-00e6b1527726",
+    "name": "[Tray] Custom JS POC 2's solution",
+    "description": "",
+    "project_id": "d3e085a3-fa53-4119-9a6b-4ea267707f5d",
+    "tags": [],
+    "custom_fields": {},
+    "view_schema": {
+      "version": 6,
+      "screens": [
+        {
+          "id": "8291d932-f764-4374-a3ab-5d3dcd41fa8c",
+          "hidden": true,
+          "items": [
+            {
+              "id": "784aa180-9263-43f3-93d1-efc448395ba6",
+              "itemType": 2,
+              "new": false,
+              "title": "[Tray] Custom JS POC 2 Configuration workflow Public Url",
+              "workflowId": "4bd6e18a-fdc7-4063-a210-f6740c1dfb41"
+            },
+            {
+              "id": "12f8df2a-b06d-49a1-aa64-f38d757a1dfd",
+              "itemType": 2,
+              "new": false,
+              "title": "[Tray] Custom JS POC 2 Public Url",
+              "workflowId": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666"
+            }
+          ],
+          "new": false
+        },
+        {
+          "id": "548e0b91-83a8-49cc-a2cb-569c0917de60",
+          "items": [
+            {
+              "id": "2a5b2d16-a4eb-4476-abec-55d1c902264b",
+              "itemType": 3,
+              "content": "Salesforce authentication"
+            },
+            {
+              "id": "145f72a9-3a42-47ff-bed3-84902f18b24c",
+              "itemType": 4,
+              "content": ""
+            },
+            {
+              "id": "5aee90c3-916e-4f0b-b159-ba7733272e42",
+              "itemType": "SPACER",
+              "unit": "%",
+              "height": 15
+            },
+            {
+              "id": "469f6a59-ea23-4a20-9b2e-149e776d2547",
+              "itemType": 0,
+              "new": false,
+              "buttonCTA": "New authentication",
+              "slot": {
+                "id": "1b46768b-c8d4-4cfa-9a13-857f888e8393",
+                "authId": "339e82d8-0c9c-4a1e-a1df-c1fdc75dbf21",
+                "serviceId": "3b5d0ee0-d143-40cf-8ef5-a76ccb4614b1",
+                "authAppId": "d403c9c6-282b-4b8c-ad02-1655ebccb166",
+                "title": "Salesforce authentication",
+                "description": "",
+                "externalId": "external_salesforce_authentication",
+                "hidden": false,
+                "useExisting": false,
+                "static": false,
+                "scopes": [
+                  "refresh_token",
+                  "full"
+                ],
+                "usage": [
+                  {
+                    "workflowId": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+                    "versionId": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+                    "steps": [
+                      {
+                        "stepName": "salesforce-1",
+                        "connector": {
+                          "name": "salesforce",
+                          "version": "7.5"
+                        },
+                        "operation": "batch_create_records",
+                        "authId": "339e82d8-0c9c-4a1e-a1df-c1fdc75dbf21",
+                        "properties": []
+                      },
+                      {
+                        "stepName": "salesforce-3",
+                        "connector": {
+                          "name": "salesforce",
+                          "version": "7.5"
+                        },
+                        "operation": "batch_create_records",
+                        "authId": "339e82d8-0c9c-4a1e-a1df-c1fdc75dbf21",
+                        "properties": []
+                      },
+                      {
+                        "stepName": "salesforce-2",
+                        "connector": {
+                          "name": "salesforce",
+                          "version": "7.5"
+                        },
+                        "operation": "batch_create_records",
+                        "authId": "339e82d8-0c9c-4a1e-a1df-c1fdc75dbf21",
+                        "properties": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "new": false
+        },
+        {
+          "id": "03d8e1e4-64fa-4643-a469-385fa1b9be10",
+          "items": [
+            {
+              "id": "b5abe419-21a4-42d4-8bb6-e941950b6181",
+              "itemType": 3,
+              "content": "Choose which objects to map"
+            },
+            {
+              "id": "4f5a68cf-abae-4051-b430-f61977163fd6",
+              "itemType": 4,
+              "content": ""
+            },
+            {
+              "id": "c069eade-0d9c-4283-b88a-aa1291219ab7",
+              "itemType": "SPACER",
+              "unit": "%",
+              "height": 15
+            },
+            {
+              "id": "d1e6b949-6686-405f-bb84-4c4255f0753e",
+              "itemType": 1,
+              "new": false,
+              "slot": {
+                "id": "cbf2337f-999c-4712-8782-132cfef6e5f4",
+                "key": "map_contact",
+                "title": "Contact",
+                "description": "",
+                "externalId": "external_map_contact",
+                "hidden": false,
+                "type": "boolean",
+                "defaultValue": true,
+                "required": true,
+                "useDefaultValue": false,
+                "static": false,
+                "usage": [
+                  {
+                    "workflowId": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+                    "versionId": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+                    "steps": [
+                      {
+                        "stepName": "boolean-condition-2",
+                        "connector": {
+                          "name": "boolean-condition",
+                          "version": "2.2"
+                        },
+                        "operation": "boolean_condition",
+                        "properties": [
+                          {
+                            "path": "conditions[0].value1",
+                            "value": {
+                              "type": "jsonpath",
+                              "value": "$.config.map_contact"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "cf844773-d851-46b7-bd8b-b0adec66c1c6",
+              "itemType": 1,
+              "new": false,
+              "slot": {
+                "id": "5f53f0a7-2a8b-480b-8f2b-add896cec6c4",
+                "key": "map_lead",
+                "title": "Lead",
+                "description": "",
+                "externalId": "external_map_lead",
+                "hidden": false,
+                "type": "boolean",
+                "defaultValue": true,
+                "required": true,
+                "useDefaultValue": false,
+                "static": false,
+                "usage": [
+                  {
+                    "workflowId": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+                    "versionId": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+                    "steps": [
+                      {
+                        "stepName": "boolean-condition-1",
+                        "connector": {
+                          "name": "boolean-condition",
+                          "version": "2.2"
+                        },
+                        "operation": "boolean_condition",
+                        "properties": [
+                          {
+                            "path": "conditions[0].value1",
+                            "value": {
+                              "type": "jsonpath",
+                              "value": "$.config.map_lead"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "c6b50c5d-a697-4d6d-a358-f6c0fe0ecd8d",
+              "itemType": 1,
+              "new": false,
+              "slot": {
+                "id": "2dce74e7-c342-4977-bf92-0deb34edf167",
+                "key": "map_account",
+                "title": "Account",
+                "description": "",
+                "externalId": "external_map_account",
+                "hidden": false,
+                "type": "boolean",
+                "defaultValue": true,
+                "required": true,
+                "useDefaultValue": false,
+                "static": false,
+                "usage": [
+                  {
+                    "workflowId": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+                    "versionId": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+                    "steps": [
+                      {
+                        "stepName": "boolean-condition-3",
+                        "connector": {
+                          "name": "boolean-condition",
+                          "version": "2.2"
+                        },
+                        "operation": "boolean_condition",
+                        "properties": [
+                          {
+                            "path": "conditions[0].value1",
+                            "value": {
+                              "type": "jsonpath",
+                              "value": "$.config.map_account"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "new": false
+        },
+        {
+          "id": "85ebcdf9-14ec-4f4f-9a2d-6fda4f470595",
+          "items": [
+            {
+              "id": "aaf84d1f-a525-42cb-b341-14381ec681f3",
+              "itemType": 3,
+              "content": "Contact field mapping"
+            },
+            {
+              "id": "298f5783-118d-4b86-a14b-92319868f944",
+              "itemType": 4,
+              "content": ""
+            },
+            {
+              "id": "0604b103-667f-4bb5-b626-541cbbb94cc0",
+              "itemType": "SPACER",
+              "unit": "%",
+              "height": 15
+            },
+            {
+              "id": "5e3c4e18-1390-4a67-b345-cb50864cb2f7",
+              "itemType": 1,
+              "new": false,
+              "slot": {
+                "id": "6eeb7e36-4713-40e2-beff-1e235cb82e24",
+                "key": "contact_mapping_load_fields",
+                "title": "Loading data",
+                "description": "",
+                "externalId": "external_contact_mapping_load_fields",
+                "hidden": false,
+                "type": "object",
+                "defaultValue": {},
+                "required": true,
+                "useDefaultValue": false,
+                "static": false,
+                "usage": [
+                  {
+                    "workflowId": "4bd6e18a-fdc7-4063-a210-f6740c1dfb41",
+                    "versionId": "9cd153c5-141e-4a93-9623-3c77b2c71fa3",
+                    "steps": [
+                      {
+                        "stepName": "script-1",
+                        "connector": {
+                          "name": "script",
+                          "version": "3.0"
+                        },
+                        "operation": "execute",
+                        "properties": [
+                          {
+                            "path": "variables[0].value",
+                            "value": {
+                              "type": "jsonpath",
+                              "value": "$.config.contact_mapping_load_fields"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "customScript": {
+                "version": 1,
+                "srcCode": "tray.on('CONFIG_SLOT_MOUNT', async ({ event, previousWizardState, previousSlotState }) => await resolveSlot(event, previousWizardState));\n\nasync function resolveSlot (event, previousWizardState ) {\n\n\tif (event.data.externalId !== tray.env.slotExternalId) return;\n  \n  const wizardValues = previousWizardState.values;\n  \n  const mapContact = wizardValues.external_map_contact;\n  \n  if (mapContact === true) {\n    return {\n      ...event.data,\n      status: 'HIDDEN',\n      value: {}\n    };\n  } else {\n    return {\n      ...event.data,\n      status: 'VISIBLE',\n      value: {},\n      jsonSchema: {\n        type: 'object', // hack to show the title\n        title: 'No mapping required, please proceed to the next screen',\n        additionalProperties: false\n      }\n    };\n  }\n  \n}",
+                "environmentVariables": {
+                  "type": "object",
+                  "value": {
+                    "env": {
+                      "type": "object",
+                      "value": {
+                        "slotExternalId": {
+                          "type": "string",
+                          "value": "external_contact_mapping_load_fields"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "c4d077ac-aef1-441b-b697-43ae4749915d",
+              "itemType": 1,
+              "new": true,
+              "slot": {
+                "id": "21479754-78aa-435c-8593-fd2954c94090",
+                "key": "contact_mapping",
+                "title": "Mapping",
+                "description": "",
+                "externalId": "external_contact_mapping",
+                "hidden": false,
+                "type": "array",
+                "defaultValue": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "required": true,
+                "useDefaultValue": false,
+                "static": false,
+                "usage": [
+                  {
+                    "workflowId": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+                    "versionId": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+                    "steps": [
+                      {
+                        "stepName": "data-mapper-7",
+                        "connector": {
+                          "name": "data-mapper",
+                          "version": "3.5"
+                        },
+                        "operation": "map_list_to_object",
+                        "properties": [
+                          {
+                            "path": "data",
+                            "value": {
+                              "type": "jsonpath",
+                              "value": "$.config.contact_mapping"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "customScript": {
+                "version": 1,
+                "srcCode": "const REQUIRED_SALESFORCE_FIELDS = [\n\t{\n\t\ttext: 'Last name',\n\t\tvalue: 'lastName'\n\t}\n];\nconst REQUIRED_IG_FIELDS = [  ];\nconst DEFAULT_MAPPING = [\n\t{\n\t\tkey: 'igLastName',\n\t\tvalue: 'lastName'\n\t}\n];\n\nconst sfFields = [\n\t{text: 'First Name', value: 'firstName'},\n\t{text: 'Last Name', value: 'lastName'}\n];\n\nconst igFields = [\n\t{text:'IG First Name', value: 'igFirstName:string'},\n\t{text:'IG Last Name', value: 'igLastName:string'}\n];\n\nconst validateValues = (event) => {\n\tconsole.log('event', event);\n\t/* return validation object based on if valid\n\treturn {} if valid\n\t\treturn {\n\t\tstatus: 'ERROR',\n\t\tmessage: 'The error message'\n\t}; if not valid */\n\tconst ig_values = event.data.value.filter(field => field !== null).map(field => field.key);\n\tconsole.log('ig_values', ig_values);\n\tconst salesforce_values = event.data.value.filter(field => field !== null).map(field => field.value);\n\tconsole.log('salesforce_values', salesforce_values);\n\n\tconst ig_unmapped_required_fields = REQUIRED_IG_FIELDS.filter(required_field => !ig_values.includes(required_field.value));\n\tconst salesforce_unmapped_required_fields = REQUIRED_SALESFORCE_FIELDS.filter(required_field => !salesforce_values.includes(required_field.value));\n\treturn (\n\t\tig_unmapped_required_fields.length || salesforce_unmapped_required_fields.length ?\n\t\t{\n\t\t\tstatus: 'ERROR',\n\t\t\tmessage: `You have an error in your mapping. The following fields are required to be mapped -\n\t\t\t${ig_unmapped_required_fields.length ? `\\nIG fields: ${ig_unmapped_required_fields.map(field => field.text).join()}` : ''}\n\t\t\t${salesforce_unmapped_required_fields.length ? `\\nSalesforce fields: ${salesforce_unmapped_required_fields.map(field => field.text).join()}` : ''}`\n\t\t} :\n\t\t{}\n\t);\n};\n\nconst baseItemsSchema = {\n\ttype: 'object',\n\tadditionalProperties: false,\n\ttitle: 'Contact mapping'\n};\n\nconst itemsResolve = (event, ig_fields_mapped, salesforce_fields_mapped) => (\n\tevent.data.value && event.data.value.length ?\n\tevent.data.value.map(row_value => {\n\t\tconst { key, value } = row_value === null ? ({ key: undefined, value: undefined }) : row_value;\n\t\tconsole.log('key', key);\n\t\tconsole.log('value', value);\n\t\treturn {\n\t\t\t...baseItemsSchema,\n\t\t\tproperties: {\n\t\t\t\tkey: {\n\t\t\t\t\ttitle: 'IG Field',\n\t\t\t\t\ttype: 'string',\n\t\t\t\t\tenum: igFields\n\t\t\t\t\t.filter(field => (\n\t\t\t\t\t\t!ig_fields_mapped.filter(mapped_field => mapped_field !== key)\n\t\t\t\t\t\t.includes(field.value)\n\t\t\t\t\t))\n\t\t\t\t},\n\t\t\t\tvalue: {\n\t\t\t\t\ttitle: 'Salesforce Field',\n\t\t\t\t\ttype: 'string',\n\t\t\t\t\tenum: sfFields\n\t\t\t\t\t.filter(field => (\n\t\t\t\t\t\t!salesforce_fields_mapped.filter(mapped_field => mapped_field !== value)\n\t\t\t\t\t\t.includes(field.value)\n\t\t\t\t\t))\n\t\t\t\t}\n\t\t\t},\n\t\t\tadditionalProperties: false,\n\t\t\ttitle: 'Contact mapping'\n\t\t};\n\t}) :\n\t{\n\t\t...baseItemsSchema,\n\t\tproperties: {\n\t\t\tkey: {\n\t\t\t\ttitle: 'IG Field',\n\t\t\t\ttype: 'string',\n\t\t\t\tenum: igFields\n\t\t\t},\n\t\t\tvalue: {\n\t\t\t\ttitle: 'Salesforce Field',\n\t\t\t\ttype: 'string',\n\t\t\t\tenum: sfFields\n\t\t\t}\n\t\t}\n\t}\n);\n\nconst resolveSlot = async (event, previousWizardState) => {\n\n\tconsole.log('event', event);\n\n\tif (event.data.externalId !== tray.env.slotExternalId) return;\n\n\tconst wizardValues = previousWizardState.values;\n\tconst mapContact = wizardValues.external_map_contact;\n\tconsole.log(mapContact);\n\tlet jsonSchema = {};\n\n\tlet event_value = event.data.value || [];\n\n\tconsole.log('event_value', event_value);\n\n\tevent_value = event_value.filter(row => {\n\t\tconsole.log('row', row);\n\t\tif (row !== null && row.key === null && row.value === null) {\n\t\t\tconsole.log('remove row');\n\t\t\treturn false;\n\t\t} else {\n\t\t\treturn true;\n\t\t}\n\t});\n\n\tconsole.log('event_value', event_value);\n\n\tconst parsed_event = {\n\t\t...event,\n\t\tdata: {\n\t\t\t...event.data,\n\t\t\tvalue: event_value\n\t\t}\n\t};\n\n\tconsole.log('parsed_event', parsed_event);\n\n\tconst ig_fields_mapped = event_value.length ? event_value.filter(field => field !== null).map(field => field.key) : [];\n\tconst salesforce_fields_mapped = event_value.length ? event_value.filter(field => field !== null).map(field => field.value) : [];\n\n\tconst itemsResolved = itemsResolve(parsed_event, ig_fields_mapped, salesforce_fields_mapped);\n\n\tconsole.log('itemsResolved', itemsResolved);\n\n\tif (event.type === 'CONFIG_SLOT_MOUNT') {\n\n\t\tconst sfAuth = wizardValues.external_salesforce_authentication;\n\t\tlet properties = {};\n\n\t\tjsonSchema = {\n\t\t\ttype: 'array',\n\t\t\ttitle: 'Contact mappings',\n\t\t\titems: itemsResolved,\n\t\t\ttable: { key: 'IG Field', value: 'Salesforce Field' },\n\t\t\tadditionalItems: true\n\t\t};\n\n\t} else {\n\n\t\tjsonSchema = {\n\t\t\t...event.data.jsonSchema,\n\t\t\titems: itemsResolved,\n\t\t\ttable: { key: 'IG Field', value: 'Salesforce Field' },\n\t\t\tadditionalItems: {\n\t\t\t\ttype: 'object',\n\t\t\t\tproperties: {\n\t\t\t\t\tkey: {\n\t\t\t\t\t\ttitle: 'IG Field',\n\t\t\t\t\t\ttype: 'string',\n\t\t\t\t\t\tenum: igFields\n\t\t\t\t\t\t.filter(field => !ig_fields_mapped.includes(field.value))\n\t\t\t\t\t},\n\t\t\t\t\tvalue: {\n\t\t\t\t\t\ttitle: 'Salesforce Field',\n\t\t\t\t\t\ttype: 'string',\n\t\t\t\t\t\tenum: sfFields\n\t\t\t\t\t\t.filter(field => !salesforce_fields_mapped.includes(field.value))\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\tadditionalProperties: false,\n\t\t\t\ttitle: 'Contact mapping'\n\t\t\t}\n\t\t}\n\n\t}\n\n\tif (mapContact) {\n\n\t\tconsole.log('event_value', event_value);\n\n\t\tconst output = {\n\t\t\t...event.data,\n\t\t\tstatus: 'VISIBLE',\n\t\t\tjsonSchema,\n\t\t\tvalue: (event.type === 'CONFIG_SLOT_MOUNT' && !event_value.length ? DEFAULT_MAPPING : event_value),\n\t\t\tvalidation: (\n\t\t\t\tparsed_event === []\n\t\t\t\t? {}\n\t\t\t\t: event.type === 'CONFIG_SLOT_MOUNT' && !event_value.length ? {} : validateValues(event)\n\t\t\t)\n\t\t};\n\n\t\tconsole.log('output', output);\n\n\t\treturn output;\n\n\t} else {\n\t\treturn {\n\t\t\t...event.data,\n\t\t\tstatus: 'HIDDEN',\n\t\t\tvalue: []\n\t\t};\n\t}\n\t\n}\n\ntray.on('CONFIG_SLOT_MOUNT', async ({ event, previousWizardState, previousSlotState }) => {\n\treturn await resolveSlot(event, previousWizardState);\n});\n\ntray.on('CONFIG_SLOT_VALUE_CHANGED', async ({ event, previousWizardState }) => {\n\treturn await resolveSlot(event, previousWizardState)\n});\n",
+                "environmentVariables": {
+                  "type": "object",
+                  "value": {
+                    "env": {
+                      "type": "object",
+                      "value": {
+                        "slotExternalId": {
+                          "type": "string",
+                          "value": "external_contact_mapping"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "new": false
+        },
+        {
+          "id": "6b5f9549-cb4c-4f36-b5ab-31a1fcdbe0f1",
+          "items": [
+            {
+              "id": "14b6e9c2-f551-4e7d-8099-0125ed64e57c",
+              "itemType": 3,
+              "content": "Lead field mapping"
+            },
+            {
+              "id": "b07392ec-b1bc-4b7d-a01b-e93cc53d0393",
+              "itemType": 4,
+              "content": ""
+            },
+            {
+              "id": "5e619882-9d62-4150-bdeb-1d4422259634",
+              "itemType": "SPACER",
+              "unit": "%",
+              "height": 15
+            },
+            {
+              "id": "d63ee29a-8640-4357-a609-977ae48a5390",
+              "itemType": 1,
+              "new": false,
+              "slot": {
+                "id": "368f2d7c-31b2-4ebd-bed5-8e7f85f38c0d",
+                "key": "lead_mapping_load_fields",
+                "title": "Loading data",
+                "description": "",
+                "externalId": "external_lead_mapping_load_fields",
+                "hidden": false,
+                "type": "object",
+                "defaultValue": {},
+                "required": true,
+                "useDefaultValue": false,
+                "static": false,
+                "usage": [
+                  {
+                    "workflowId": "4bd6e18a-fdc7-4063-a210-f6740c1dfb41",
+                    "versionId": "9cd153c5-141e-4a93-9623-3c77b2c71fa3",
+                    "steps": [
+                      {
+                        "stepName": "script-1",
+                        "connector": {
+                          "name": "script",
+                          "version": "3.0"
+                        },
+                        "operation": "execute",
+                        "properties": [
+                          {
+                            "path": "variables[1].value",
+                            "value": {
+                              "type": "jsonpath",
+                              "value": "$.config.lead_mapping_load_fields"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "customScript": {
+                "version": 1,
+                "srcCode": "tray.on('CONFIG_SLOT_MOUNT', async ({ event, previousWizardState, previousSlotState }) => await resolveSlot(event, previousWizardState));\n\nasync function resolveSlot (event, previousWizardState ) {\n\n\tif (event.data.externalId !== tray.env.slotExternalId) return;\n  \n  const wizardValues = previousWizardState.values;\n  \n  const mapLead = wizardValues.external_map_lead;\n  \n  if (mapLead === true) {\n    return {\n      ...event.data,\n      status: 'HIDDEN',\n      value: {}\n    };\n  } else {\n    return {\n      ...event.data,\n      status: 'VISIBLE',\n      value: {},\n      jsonSchema: {\n        type: 'object', // hack to show the title\n        title: 'No mapping required, please proceed to the next screen',\n        additionalProperties: false\n      }\n    };\n  }\n  \n}",
+                "environmentVariables": {
+                  "type": "object",
+                  "value": {
+                    "env": {
+                      "type": "object",
+                      "value": {
+                        "slotExternalId": {
+                          "type": "string",
+                          "value": "external_lead_mapping_load_fields"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "a0807b0f-485c-4a8b-977a-7cd829d247fd",
+              "itemType": 1,
+              "new": true,
+              "slot": {
+                "id": "1ea863dd-1788-4d7d-bd47-7f8eceacf74a",
+                "key": "lead_mapping",
+                "title": "Mapping",
+                "description": "",
+                "externalId": "external_lead_mapping",
+                "hidden": false,
+                "type": "array",
+                "defaultValue": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "required": true,
+                "useDefaultValue": false,
+                "static": false,
+                "usage": [
+                  {
+                    "workflowId": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+                    "versionId": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+                    "steps": [
+                      {
+                        "stepName": "data-mapper-8",
+                        "connector": {
+                          "name": "data-mapper",
+                          "version": "3.5"
+                        },
+                        "operation": "map_list_to_object",
+                        "properties": [
+                          {
+                            "path": "data",
+                            "value": {
+                              "type": "jsonpath",
+                              "value": "$.config.lead_mapping"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "customScript": {
+                "version": 1,
+                "srcCode": "const REQUIRED_SALESFORCE_FIELDS = [\n\t{\n\t\ttext: 'Last name',\n\t\tvalue: 'lastName'\n\t}\n];\nconst REQUIRED_IG_FIELDS = [  ];\nconst DEFAULT_MAPPING = [\n\t{\n\t\tkey: 'igLastName',\n\t\tvalue: 'lastName'\n\t}\n];\n\nconst sfFields = [\n\t{text: 'First Name', value: 'firstName'},\n\t{text: 'Last Name', value: 'lastName'}\n];\n\nconst igFields = [\n\t{text:'IG First Name', value: 'igFirstName:string'},\n\t{text:'IG Last Name', value: 'igLastName:string'}\n];\n\nconst validateValues = (event) => {\n\tconsole.log('event', event);\n\t/* return validation object based on if valid\n\treturn {} if valid\n\t\treturn {\n\t\tstatus: 'ERROR',\n\t\tmessage: 'The error message'\n\t}; if not valid */\n\tconst ig_values = event.data.value.filter(field => field !== null).map(field => field.key);\n\tconsole.log('ig_values', ig_values);\n\tconst salesforce_values = event.data.value.filter(field => field !== null).map(field => field.value);\n\tconsole.log('salesforce_values', salesforce_values);\n\n\tconst ig_unmapped_required_fields = REQUIRED_IG_FIELDS.filter(required_field => !ig_values.includes(required_field.value));\n\tconst salesforce_unmapped_required_fields = REQUIRED_SALESFORCE_FIELDS.filter(required_field => !salesforce_values.includes(required_field.value));\n\treturn (\n\t\tig_unmapped_required_fields.length || salesforce_unmapped_required_fields.length ?\n\t\t{\n\t\t\tstatus: 'ERROR',\n\t\t\tmessage: `You have an error in your mapping. The following fields are required to be mapped -\n\t\t\t${ig_unmapped_required_fields.length ? `\\nIG fields: ${ig_unmapped_required_fields.map(field => field.text).join()}` : ''}\n\t\t\t${salesforce_unmapped_required_fields.length ? `\\nSalesforce fields: ${salesforce_unmapped_required_fields.map(field => field.text).join()}` : ''}`\n\t\t} :\n\t\t{}\n\t);\n};\n\nconst baseItemsSchema = {\n\ttype: 'object',\n\tadditionalProperties: false,\n\ttitle: 'Lead mapping'\n};\n\nconst itemsResolve = (event, ig_fields_mapped, salesforce_fields_mapped) => (\n\tevent.data.value && event.data.value.length ?\n\tevent.data.value.map(row_value => {\n\t\tconst { key, value } = row_value === null ? ({ key: undefined, value: undefined }) : row_value;\n\t\tconsole.log('key', key);\n\t\tconsole.log('value', value);\n\t\treturn {\n\t\t\t...baseItemsSchema,\n\t\t\tproperties: {\n\t\t\t\tkey: {\n\t\t\t\t\ttitle: 'IG Field',\n\t\t\t\t\ttype: 'string',\n\t\t\t\t\tenum: igFields\n\t\t\t\t\t.filter(field => (\n\t\t\t\t\t\t!ig_fields_mapped.filter(mapped_field => mapped_field !== key)\n\t\t\t\t\t\t.includes(field.value)\n\t\t\t\t\t))\n\t\t\t\t},\n\t\t\t\tvalue: {\n\t\t\t\t\ttitle: 'Salesforce Field',\n\t\t\t\t\ttype: 'string',\n\t\t\t\t\tenum: sfFields\n\t\t\t\t\t.filter(field => (\n\t\t\t\t\t\t!salesforce_fields_mapped.filter(mapped_field => mapped_field !== value)\n\t\t\t\t\t\t.includes(field.value)\n\t\t\t\t\t))\n\t\t\t\t}\n\t\t\t},\n\t\t\tadditionalProperties: false,\n\t\t\ttitle: 'Lead mapping'\n\t\t};\n\t}) :\n\t{\n\t\t...baseItemsSchema,\n\t\tproperties: {\n\t\t\tkey: {\n\t\t\t\ttitle: 'IG Field',\n\t\t\t\ttype: 'string',\n\t\t\t\tenum: igFields\n\t\t\t},\n\t\t\tvalue: {\n\t\t\t\ttitle: 'Salesforce Field',\n\t\t\t\ttype: 'string',\n\t\t\t\tenum: sfFields\n\t\t\t}\n\t\t}\n\t}\n);\n\nconst resolveSlot = async (event, previousWizardState) => {\n\n\tconsole.log('event', event);\n\n\tif (event.data.externalId !== tray.env.slotExternalId) return;\n\n\tconst wizardValues = previousWizardState.values;\n\tconst mapLead = wizardValues.external_map_lead;\n\tconsole.log(mapLead);\n\tlet jsonSchema = {};\n\n\tlet event_value = event.data.value || [];\n\n\tconsole.log('event_value', event_value);\n\n\tevent_value = event_value.filter(row => {\n\t\tconsole.log('row', row);\n\t\tif (row !== null && row.key === null && row.value === null) {\n\t\t\tconsole.log('remove row');\n\t\t\treturn false;\n\t\t} else {\n\t\t\treturn true;\n\t\t}\n\t});\n\n\tconsole.log('event_value', event_value);\n\n\tconst parsed_event = {\n\t\t...event,\n\t\tdata: {\n\t\t\t...event.data,\n\t\t\tvalue: event_value\n\t\t}\n\t};\n\n\tconsole.log('parsed_event', parsed_event);\n\n\tconst ig_fields_mapped = event_value.length ? event_value.filter(field => field !== null).map(field => field.key) : [];\n\tconst salesforce_fields_mapped = event_value.length ? event_value.filter(field => field !== null).map(field => field.value) : [];\n\n\tconst itemsResolved = itemsResolve(parsed_event, ig_fields_mapped, salesforce_fields_mapped);\n\n\tconsole.log('itemsResolved', itemsResolved);\n\n\tif (event.type === 'CONFIG_SLOT_MOUNT') {\n\n\t\tconst sfAuth = wizardValues.external_salesforce_authentication;\n\t\tlet properties = {};\n\n\t\tjsonSchema = {\n\t\t\ttype: 'array',\n\t\t\ttitle: 'Lead mappings',\n\t\t\titems: itemsResolved,\n\t\t\ttable: { key: 'IG Field', value: 'Salesforce Field' },\n\t\t\tadditionalItems: true\n\t\t};\n\n\t} else {\n\n\t\tjsonSchema = {\n\t\t\t...event.data.jsonSchema,\n\t\t\titems: itemsResolved,\n\t\t\ttable: { key: 'IG Field', value: 'Salesforce Field' },\n\t\t\tadditionalItems: {\n\t\t\t\ttype: 'object',\n\t\t\t\tproperties: {\n\t\t\t\t\tkey: {\n\t\t\t\t\t\ttitle: 'IG Field',\n\t\t\t\t\t\ttype: 'string',\n\t\t\t\t\t\tenum: igFields\n\t\t\t\t\t\t.filter(field => !ig_fields_mapped.includes(field.value))\n\t\t\t\t\t},\n\t\t\t\t\tvalue: {\n\t\t\t\t\t\ttitle: 'Salesforce Field',\n\t\t\t\t\t\ttype: 'string',\n\t\t\t\t\t\tenum: sfFields\n\t\t\t\t\t\t.filter(field => !salesforce_fields_mapped.includes(field.value))\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\tadditionalProperties: false,\n\t\t\t\ttitle: 'Lead mapping'\n\t\t\t}\n\t\t}\n\n\t}\n\n\tif (mapLead) {\n\n\t\tconsole.log('event_value', event_value);\n\n\t\tconst output = {\n\t\t\t...event.data,\n\t\t\tstatus: 'VISIBLE',\n\t\t\tjsonSchema,\n\t\t\tvalue: (event.type === 'CONFIG_SLOT_MOUNT' && !event_value.length ? DEFAULT_MAPPING : event_value),\n\t\t\tvalidation: (\n\t\t\t\tparsed_event === []\n\t\t\t\t? {}\n\t\t\t\t: event.type === 'CONFIG_SLOT_MOUNT' && !event_value.length ? {} : validateValues(event)\n\t\t\t)\n\t\t};\n\n\t\tconsole.log('output', output);\n\n\t\treturn output;\n\n\t} else {\n\t\treturn {\n\t\t\t...event.data,\n\t\t\tstatus: 'HIDDEN',\n\t\t\tvalue: []\n\t\t};\n\t}\n\t\n}\n\ntray.on('CONFIG_SLOT_MOUNT', async ({ event, previousWizardState, previousSlotState }) => {\n\treturn await resolveSlot(event, previousWizardState);\n});\n\ntray.on('CONFIG_SLOT_VALUE_CHANGED', async ({ event, previousWizardState }) => {\n\treturn await resolveSlot(event, previousWizardState)\n});\n",
+                "environmentVariables": {
+                  "type": "object",
+                  "value": {
+                    "env": {
+                      "type": "object",
+                      "value": {
+                        "slotExternalId": {
+                          "type": "string",
+                          "value": "external_lead_mapping"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "new": false
+        },
+        {
+          "id": "3f95416a-7799-4358-92aa-57774d0ef1f7",
+          "items": [
+            {
+              "id": "4b1f7dc8-a2cc-4393-a150-48c3b1ee5333",
+              "itemType": 3,
+              "content": "Account field mapping"
+            },
+            {
+              "id": "86a53866-33c5-455f-b54a-842f23f76e44",
+              "itemType": 4,
+              "content": ""
+            },
+            {
+              "id": "62b84c94-e05c-4ff9-944e-4b6097ed03e7",
+              "itemType": "SPACER",
+              "unit": "%",
+              "height": 15
+            },
+            {
+              "id": "024067e1-3b7d-4c4f-8e37-d8c7554eb213",
+              "itemType": 1,
+              "new": false,
+              "slot": {
+                "id": "7061c29b-b74c-4b08-8e9d-12ceb1d5ebd0",
+                "key": "account_mapping_load_fields",
+                "title": "Loading data",
+                "description": "",
+                "externalId": "external_account_mapping_load_fields",
+                "hidden": false,
+                "type": "object",
+                "defaultValue": {},
+                "required": true,
+                "useDefaultValue": false,
+                "static": false,
+                "usage": [
+                  {
+                    "workflowId": "4bd6e18a-fdc7-4063-a210-f6740c1dfb41",
+                    "versionId": "9cd153c5-141e-4a93-9623-3c77b2c71fa3",
+                    "steps": [
+                      {
+                        "stepName": "script-1",
+                        "connector": {
+                          "name": "script",
+                          "version": "3.0"
+                        },
+                        "operation": "execute",
+                        "properties": [
+                          {
+                            "path": "variables[2].value",
+                            "value": {
+                              "type": "jsonpath",
+                              "value": "$.config.account_mapping_load_fields"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "customScript": {
+                "version": 1,
+                "srcCode": "tray.on('CONFIG_SLOT_MOUNT', async ({ event, previousWizardState, previousSlotState }) => await resolveSlot(event, previousWizardState));\n\nasync function resolveSlot (event, previousWizardState ) {\n\n\tif (event.data.externalId !== tray.env.slotExternalId) return;\n  \n  const wizardValues = previousWizardState.values;\n  \n  const mapAccount = wizardValues.external_map_account;\n  \n  if (mapAccount === true) {\n    return {\n      ...event.data,\n      status: 'HIDDEN',\n      value: {}\n    };\n  } else {\n    return {\n      ...event.data,\n      status: 'VISIBLE',\n      value: {},\n      jsonSchema: {\n        type: 'object', // hack to show the title\n        title: 'No mapping required, please click the Finish button to complete setup',\n        additionalProperties: false\n      }\n    };\n  }\n  \n}",
+                "environmentVariables": {
+                  "type": "object",
+                  "value": {
+                    "env": {
+                      "type": "object",
+                      "value": {
+                        "slotExternalId": {
+                          "type": "string",
+                          "value": "external_account_mapping_load_fields"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "e5744e10-549d-41bb-bd21-0986b9db884a",
+              "itemType": 1,
+              "new": true,
+              "slot": {
+                "id": "9b875a5c-a0cb-48a3-a980-000592bf2f56",
+                "key": "account_mapping",
+                "title": "Mapping",
+                "description": "",
+                "externalId": "external_account_mapping",
+                "hidden": false,
+                "type": "array",
+                "defaultValue": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "required": true,
+                "useDefaultValue": false,
+                "static": false,
+                "usage": [
+                  {
+                    "workflowId": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+                    "versionId": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+                    "steps": [
+                      {
+                        "stepName": "data-mapper-9",
+                        "connector": {
+                          "name": "data-mapper",
+                          "version": "3.5"
+                        },
+                        "operation": "map_list_to_object",
+                        "properties": [
+                          {
+                            "path": "data",
+                            "value": {
+                              "type": "jsonpath",
+                              "value": "$.config.account_mapping"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "customScript": {
+                "version": 1,
+                "srcCode": "const REQUIRED_SALESFORCE_FIELDS = [ ];\nconst REQUIRED_IG_FIELDS = [  ];\nconst DEFAULT_MAPPING = [ ];\n\nconst sfFields = [\n\t{text: 'Account Name', value: 'name'},\n\t{text: 'Website', value: 'website'}\n];\n\nconst igFields = [\n\t{text:'IG Account Name', value: 'igAccountName:string'},\n\t{text:'IG Website', value: 'igWebsite:string'}\n];\n\nconst validateValues = (event) => {\n\tconsole.log('event', event);\n\t/* return validation object based on if valid\n\treturn {} if valid\n\t\treturn {\n\t\tstatus: 'ERROR',\n\t\tmessage: 'The error message'\n\t}; if not valid */\n\tconst ig_values = event.data.value.filter(field => field !== null).map(field => field.key);\n\tconsole.log('ig_values', ig_values);\n\tconst salesforce_values = event.data.value.filter(field => field !== null).map(field => field.value);\n\tconsole.log('salesforce_values', salesforce_values);\n\n\tconst ig_unmapped_required_fields = REQUIRED_IG_FIELDS.filter(required_field => !ig_values.includes(required_field.value));\n\tconst salesforce_unmapped_required_fields = REQUIRED_SALESFORCE_FIELDS.filter(required_field => !salesforce_values.includes(required_field.value));\n\treturn (\n\t\tig_unmapped_required_fields.length || salesforce_unmapped_required_fields.length ?\n\t\t{\n\t\t\tstatus: 'ERROR',\n\t\t\tmessage: `You have an error in your mapping. The following fields are required to be mapped -\n\t\t\t${ig_unmapped_required_fields.length ? `\\nIG fields: ${ig_unmapped_required_fields.map(field => field.text).join()}` : ''}\n\t\t\t${salesforce_unmapped_required_fields.length ? `\\nSalesforce fields: ${salesforce_unmapped_required_fields.map(field => field.text).join()}` : ''}`\n\t\t} :\n\t\t{}\n\t);\n};\n\nconst baseItemsSchema = {\n\ttype: 'object',\n\tadditionalProperties: false,\n\ttitle: 'Account mapping'\n};\n\nconst itemsResolve = (event, ig_fields_mapped, salesforce_fields_mapped) => (\n\tevent.data.value && event.data.value.length ?\n\tevent.data.value.map(row_value => {\n\t\tconst { key, value } = row_value === null ? ({ key: undefined, value: undefined }) : row_value;\n\t\tconsole.log('key', key);\n\t\tconsole.log('value', value);\n\t\treturn {\n\t\t\t...baseItemsSchema,\n\t\t\tproperties: {\n\t\t\t\tkey: {\n\t\t\t\t\ttitle: 'IG Field',\n\t\t\t\t\ttype: 'string',\n\t\t\t\t\tenum: igFields\n\t\t\t\t\t.filter(field => (\n\t\t\t\t\t\t!ig_fields_mapped.filter(mapped_field => mapped_field !== key)\n\t\t\t\t\t\t.includes(field.value)\n\t\t\t\t\t))\n\t\t\t\t},\n\t\t\t\tvalue: {\n\t\t\t\t\ttitle: 'Salesforce Field',\n\t\t\t\t\ttype: 'string',\n\t\t\t\t\tenum: sfFields\n\t\t\t\t\t.filter(field => (\n\t\t\t\t\t\t!salesforce_fields_mapped.filter(mapped_field => mapped_field !== value)\n\t\t\t\t\t\t.includes(field.value)\n\t\t\t\t\t))\n\t\t\t\t}\n\t\t\t},\n\t\t\tadditionalProperties: false,\n\t\t\ttitle: 'Account mapping'\n\t\t};\n\t}) :\n\t{\n\t\t...baseItemsSchema,\n\t\tproperties: {\n\t\t\tkey: {\n\t\t\t\ttitle: 'IG Field',\n\t\t\t\ttype: 'string',\n\t\t\t\tenum: igFields\n\t\t\t},\n\t\t\tvalue: {\n\t\t\t\ttitle: 'Salesforce Field',\n\t\t\t\ttype: 'string',\n\t\t\t\tenum: sfFields\n\t\t\t}\n\t\t}\n\t}\n);\n\nconst resolveSlot = async (event, previousWizardState) => {\n\n\tconsole.log('event', event);\n\n\tif (event.data.externalId !== tray.env.slotExternalId) return;\n\n\tconst wizardValues = previousWizardState.values;\n\tconst mapAccount = wizardValues.external_map_account;\n\tconsole.log(mapAccount);\n\tlet jsonSchema = {};\n\n\tlet event_value = event.data.value || [];\n\n\tconsole.log('event_value', event_value);\n\n\tevent_value = event_value.filter(row => {\n\t\tconsole.log('row', row);\n\t\tif (row !== null && row.key === null && row.value === null) {\n\t\t\tconsole.log('remove row');\n\t\t\treturn false;\n\t\t} else {\n\t\t\treturn true;\n\t\t}\n\t});\n\n\tconsole.log('event_value', event_value);\n\n\tconst parsed_event = {\n\t\t...event,\n\t\tdata: {\n\t\t\t...event.data,\n\t\t\tvalue: event_value\n\t\t}\n\t};\n\n\tconsole.log('parsed_event', parsed_event);\n\n\tconst ig_fields_mapped = event_value.length ? event_value.filter(field => field !== null).map(field => field.key) : [];\n\tconst salesforce_fields_mapped = event_value.length ? event_value.filter(field => field !== null).map(field => field.value) : [];\n\n\tconst itemsResolved = itemsResolve(parsed_event, ig_fields_mapped, salesforce_fields_mapped);\n\n\tconsole.log('itemsResolved', itemsResolved);\n\n\tif (event.type === 'CONFIG_SLOT_MOUNT') {\n\n\t\tconst sfAuth = wizardValues.external_salesforce_authentication;\n\t\tlet properties = {};\n\n\t\tjsonSchema = {\n\t\t\ttype: 'array',\n\t\t\ttitle: 'Account mappings',\n\t\t\titems: itemsResolved,\n\t\t\ttable: { key: 'IG Field', value: 'Salesforce Field' },\n\t\t\tadditionalItems: true\n\t\t};\n\n\t} else {\n\n\t\tjsonSchema = {\n\t\t\t...event.data.jsonSchema,\n\t\t\titems: itemsResolved,\n\t\t\ttable: { key: 'IG Field', value: 'Salesforce Field' },\n\t\t\tadditionalItems: {\n\t\t\t\ttype: 'object',\n\t\t\t\tproperties: {\n\t\t\t\t\tkey: {\n\t\t\t\t\t\ttitle: 'IG Field',\n\t\t\t\t\t\ttype: 'string',\n\t\t\t\t\t\tenum: igFields\n\t\t\t\t\t\t.filter(field => !ig_fields_mapped.includes(field.value))\n\t\t\t\t\t},\n\t\t\t\t\tvalue: {\n\t\t\t\t\t\ttitle: 'Salesforce Field',\n\t\t\t\t\t\ttype: 'string',\n\t\t\t\t\t\tenum: sfFields\n\t\t\t\t\t\t.filter(field => !salesforce_fields_mapped.includes(field.value))\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\tadditionalProperties: false,\n\t\t\t\ttitle: 'Account mapping'\n\t\t\t}\n\t\t}\n\n\t}\n\n\tif (mapAccount) {\n\n\t\tconsole.log('event_value', event_value);\n\n\t\tconst output = {\n\t\t\t...event.data,\n\t\t\tstatus: 'VISIBLE',\n\t\t\tjsonSchema,\n\t\t\tvalue: (event.type === 'CONFIG_SLOT_MOUNT' && !event_value.length ? DEFAULT_MAPPING : event_value),\n\t\t\tvalidation: (\n\t\t\t\tparsed_event === []\n\t\t\t\t? {}\n\t\t\t\t: event.type === 'CONFIG_SLOT_MOUNT' && !event_value.length ? {} : validateValues(event)\n\t\t\t)\n\t\t};\n\n\t\tconsole.log('output', output);\n\n\t\treturn output;\n\n\t} else {\n\t\treturn {\n\t\t\t...event.data,\n\t\t\tstatus: 'HIDDEN',\n\t\t\tvalue: []\n\t\t};\n\t}\n\t\n}\n\ntray.on('CONFIG_SLOT_MOUNT', async ({ event, previousWizardState, previousSlotState }) => {\n\treturn await resolveSlot(event, previousWizardState);\n});\n\ntray.on('CONFIG_SLOT_VALUE_CHANGED', async ({ event, previousWizardState }) => {\n\treturn await resolveSlot(event, previousWizardState)\n});\n",
+                "environmentVariables": {
+                  "type": "object",
+                  "value": {
+                    "env": {
+                      "type": "object",
+                      "value": {
+                        "slotExternalId": {
+                          "type": "string",
+                          "value": "external_account_mapping"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "new": false
+        }
+      ]
+    },
+    "auth_slots": [
+      {
+        "id": "1b46768b-c8d4-4cfa-9a13-857f888e8393",
+        "auth_group": "56d7e055-a5de-4961-b43d-b4b76fe10bde",
+        "service_id": "3b5d0ee0-d143-40cf-8ef5-a76ccb4614b1",
+        "auth_app_id": "d403c9c6-282b-4b8c-ad02-1655ebccb166",
+        "title": "Salesforce authentication",
+        "description": "",
+        "external_id": "external_salesforce_authentication",
+        "hidden": false,
+        "use_existing": false,
+        "static": false,
+        "scopes": [
+          "refresh_token",
+          "full"
+        ],
+        "usage": [
+          {
+            "workflow_id": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+            "version_id": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+            "steps": [
+              {
+                "step_name": "salesforce-1",
+                "connector": {
+                  "name": "salesforce",
+                  "version": "7.5"
+                },
+                "operation": "batch_create_records",
+                "auth_group": "56d7e055-a5de-4961-b43d-b4b76fe10bde",
+                "properties": []
+              },
+              {
+                "step_name": "salesforce-3",
+                "connector": {
+                  "name": "salesforce",
+                  "version": "7.5"
+                },
+                "operation": "batch_create_records",
+                "auth_group": "56d7e055-a5de-4961-b43d-b4b76fe10bde",
+                "properties": []
+              },
+              {
+                "step_name": "salesforce-2",
+                "connector": {
+                  "name": "salesforce",
+                  "version": "7.5"
+                },
+                "operation": "batch_create_records",
+                "auth_group": "56d7e055-a5de-4961-b43d-b4b76fe10bde",
+                "properties": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "config_slots": [
+      {
+        "id": "6eeb7e36-4713-40e2-beff-1e235cb82e24",
+        "key": "contact_mapping_load_fields",
+        "title": "Loading data",
+        "description": "",
+        "external_id": "external_contact_mapping_load_fields",
+        "hidden": false,
+        "type": "object",
+        "default_value": {},
+        "required": true,
+        "use_default_value": false,
+        "static": false,
+        "usage": [
+          {
+            "workflow_id": "4bd6e18a-fdc7-4063-a210-f6740c1dfb41",
+            "version_id": "9cd153c5-141e-4a93-9623-3c77b2c71fa3",
+            "steps": [
+              {
+                "step_name": "script-1",
+                "connector": {
+                  "name": "script",
+                  "version": "3.0"
+                },
+                "operation": "execute",
+                "properties": [
+                  {
+                    "path": "variables[0].value",
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.contact_mapping_load_fields"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cbf2337f-999c-4712-8782-132cfef6e5f4",
+        "key": "map_contact",
+        "title": "Contact",
+        "description": "",
+        "external_id": "external_map_contact",
+        "hidden": false,
+        "type": "boolean",
+        "default_value": true,
+        "required": true,
+        "use_default_value": false,
+        "static": false,
+        "usage": [
+          {
+            "workflow_id": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+            "version_id": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+            "steps": [
+              {
+                "step_name": "boolean-condition-2",
+                "connector": {
+                  "name": "boolean-condition",
+                  "version": "2.2"
+                },
+                "operation": "boolean_condition",
+                "properties": [
+                  {
+                    "path": "conditions[0].value1",
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.map_contact"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "368f2d7c-31b2-4ebd-bed5-8e7f85f38c0d",
+        "key": "lead_mapping_load_fields",
+        "title": "Loading data",
+        "description": "",
+        "external_id": "external_lead_mapping_load_fields",
+        "hidden": false,
+        "type": "object",
+        "default_value": {},
+        "required": true,
+        "use_default_value": false,
+        "static": false,
+        "usage": [
+          {
+            "workflow_id": "4bd6e18a-fdc7-4063-a210-f6740c1dfb41",
+            "version_id": "9cd153c5-141e-4a93-9623-3c77b2c71fa3",
+            "steps": [
+              {
+                "step_name": "script-1",
+                "connector": {
+                  "name": "script",
+                  "version": "3.0"
+                },
+                "operation": "execute",
+                "properties": [
+                  {
+                    "path": "variables[1].value",
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.lead_mapping_load_fields"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "9b875a5c-a0cb-48a3-a980-000592bf2f56",
+        "key": "account_mapping",
+        "title": "Mapping",
+        "description": "",
+        "external_id": "external_account_mapping",
+        "hidden": false,
+        "type": "array",
+        "default_value": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "required": true,
+        "use_default_value": false,
+        "static": false,
+        "usage": [
+          {
+            "workflow_id": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+            "version_id": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+            "steps": [
+              {
+                "step_name": "data-mapper-9",
+                "connector": {
+                  "name": "data-mapper",
+                  "version": "3.5"
+                },
+                "operation": "map_list_to_object",
+                "properties": [
+                  {
+                    "path": "data",
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.account_mapping"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "21479754-78aa-435c-8593-fd2954c94090",
+        "key": "contact_mapping",
+        "title": "Mapping",
+        "description": "",
+        "external_id": "external_contact_mapping",
+        "hidden": false,
+        "type": "array",
+        "default_value": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "required": true,
+        "use_default_value": false,
+        "static": false,
+        "usage": [
+          {
+            "workflow_id": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+            "version_id": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+            "steps": [
+              {
+                "step_name": "data-mapper-7",
+                "connector": {
+                  "name": "data-mapper",
+                  "version": "3.5"
+                },
+                "operation": "map_list_to_object",
+                "properties": [
+                  {
+                    "path": "data",
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.contact_mapping"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "7061c29b-b74c-4b08-8e9d-12ceb1d5ebd0",
+        "key": "account_mapping_load_fields",
+        "title": "Loading data",
+        "description": "",
+        "external_id": "external_account_mapping_load_fields",
+        "hidden": false,
+        "type": "object",
+        "default_value": {},
+        "required": true,
+        "use_default_value": false,
+        "static": false,
+        "usage": [
+          {
+            "workflow_id": "4bd6e18a-fdc7-4063-a210-f6740c1dfb41",
+            "version_id": "9cd153c5-141e-4a93-9623-3c77b2c71fa3",
+            "steps": [
+              {
+                "step_name": "script-1",
+                "connector": {
+                  "name": "script",
+                  "version": "3.0"
+                },
+                "operation": "execute",
+                "properties": [
+                  {
+                    "path": "variables[2].value",
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.account_mapping_load_fields"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "2dce74e7-c342-4977-bf92-0deb34edf167",
+        "key": "map_account",
+        "title": "Account",
+        "description": "",
+        "external_id": "external_map_account",
+        "hidden": false,
+        "type": "boolean",
+        "default_value": true,
+        "required": true,
+        "use_default_value": false,
+        "static": false,
+        "usage": [
+          {
+            "workflow_id": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+            "version_id": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+            "steps": [
+              {
+                "step_name": "boolean-condition-3",
+                "connector": {
+                  "name": "boolean-condition",
+                  "version": "2.2"
+                },
+                "operation": "boolean_condition",
+                "properties": [
+                  {
+                    "path": "conditions[0].value1",
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.map_account"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "5f53f0a7-2a8b-480b-8f2b-add896cec6c4",
+        "key": "map_lead",
+        "title": "Lead",
+        "description": "",
+        "external_id": "external_map_lead",
+        "hidden": false,
+        "type": "boolean",
+        "default_value": true,
+        "required": true,
+        "use_default_value": false,
+        "static": false,
+        "usage": [
+          {
+            "workflow_id": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+            "version_id": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+            "steps": [
+              {
+                "step_name": "boolean-condition-1",
+                "connector": {
+                  "name": "boolean-condition",
+                  "version": "2.2"
+                },
+                "operation": "boolean_condition",
+                "properties": [
+                  {
+                    "path": "conditions[0].value1",
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.map_lead"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1ea863dd-1788-4d7d-bd47-7f8eceacf74a",
+        "key": "lead_mapping",
+        "title": "Mapping",
+        "description": "",
+        "external_id": "external_lead_mapping",
+        "hidden": false,
+        "type": "array",
+        "default_value": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "required": true,
+        "use_default_value": false,
+        "static": false,
+        "usage": [
+          {
+            "workflow_id": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+            "version_id": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+            "steps": [
+              {
+                "step_name": "data-mapper-8",
+                "connector": {
+                  "name": "data-mapper",
+                  "version": "3.5"
+                },
+                "operation": "map_list_to_object",
+                "properties": [
+                  {
+                    "path": "data",
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.lead_mapping"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "tray_export_version": 3,
+  "workflows": [
+    {
+      "id": "4bd6e18a-fdc7-4063-a210-f6740c1dfb41",
+      "created": "2021-02-23T13:32:55.880Z",
+      "workspace_id": "bdc41e28-177c-4d6a-88e0-73e92444f1bc",
+      "project_id": "d3e085a3-fa53-4119-9a6b-4ea267707f5d",
+      "group": "49da7e9c-c5d1-4e86-9e8b-9268d50686c8",
+      "creator": "bdc41e28-177c-4d6a-88e0-73e92444f1bc",
+      "version": {
+        "id": "9cd153c5-141e-4a93-9623-3c77b2c71fa3",
+        "created": "2021-02-23T14:41:09.994Z"
+      },
+      "title": "[Tray] Custom JS POC 2 Configuration workflow",
+      "enabled": true,
+      "tags": [],
+      "settings": {
+        "config": {
+          "account_mapping_load_fields": {},
+          "salesforce_contact_fields": [],
+          "map_account": true,
+          "account_mapping": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "contact_mapping": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "map_contact": true,
+          "map_lead": true,
+          "contact_mapping_load_fields": {},
+          "salesforce_account_fields": [],
+          "ig_fields": [],
+          "lead_mapping_load_fields": {},
+          "lead_mapping": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "salesforce_lead_fields": []
+        },
+        "input_schema": {},
+        "output_schema": {}
+      },
+      "steps_structure": [
+        {
+          "name": "trigger",
+          "type": "normal",
+          "content": {}
+        },
+        {
+          "name": "script-1",
+          "type": "normal",
+          "content": {}
+        }
+      ],
+      "steps": {
+        "trigger": {
+          "title": "Manual Trigger",
+          "connector": {
+            "name": "noop",
+            "version": "1.0"
+          },
+          "operation": "trigger",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {}
+        },
+        "script-1": {
+          "title": "Script",
+          "connector": {
+            "name": "script",
+            "version": "3.0"
+          },
+          "operation": "execute",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "variables": {
+              "type": "array",
+              "value": [
+                {
+                  "type": "object",
+                  "value": {
+                    "name": {
+                      "type": "string",
+                      "value": "contact_mapping_fields"
+                    },
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.contact_mapping_load_fields"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "value": {
+                    "name": {
+                      "type": "string",
+                      "value": "lead_mapping_fields"
+                    },
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.lead_mapping_load_fields"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "value": {
+                    "name": {
+                      "type": "string",
+                      "value": "account_mapping_fields"
+                    },
+                    "value": {
+                      "type": "jsonpath",
+                      "value": "$.config.account_mapping_load_fields"
+                    }
+                  }
+                }
+              ]
+            },
+            "script": {
+              "type": "string",
+              "value": "// You can reference the input variables using input.NAME\n// Parsed JSON files could be referenced as fileInput\nexports.step = function(input, fileInput) {\n\treturn input.foo;\n};"
+            },
+            "file_output": {
+              "type": "boolean",
+              "value": false
+            }
+          }
+        }
+      },
+      "dependencies": []
+    },
+    {
+      "id": "4d78ecd8-a7bf-4cb9-a398-d5eae5215666",
+      "created": "2021-02-23T13:19:47.071Z",
+      "workspace_id": "bdc41e28-177c-4d6a-88e0-73e92444f1bc",
+      "project_id": "d3e085a3-fa53-4119-9a6b-4ea267707f5d",
+      "group": "b1de3aa0-b413-4514-ba4f-0e39e15dd936",
+      "creator": "bdc41e28-177c-4d6a-88e0-73e92444f1bc",
+      "version": {
+        "id": "a8a26033-bd38-4ab4-b0df-d0703e535675",
+        "created": "2021-03-11T20:32:51.947Z"
+      },
+      "title": "[Tray] Custom JS POC 2",
+      "enabled": false,
+      "tags": [],
+      "settings": {
+        "config": {
+          "account_mapping_load_fields": {},
+          "salesforce_contact_fields": [],
+          "map_account": true,
+          "account_mapping": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "contact_mapping": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "map_contact": true,
+          "map_lead": true,
+          "contact_mapping_load_fields": {},
+          "salesforce_account_fields": [],
+          "ig_fields": [],
+          "lead_mapping_load_fields": {},
+          "lead_mapping": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "salesforce_lead_fields": []
+        },
+        "input_schema": {},
+        "output_schema": {}
+      },
+      "steps_structure": [
+        {
+          "name": "trigger",
+          "type": "normal",
+          "content": {}
+        },
+        {
+          "name": "boolean-condition-1",
+          "type": "branch",
+          "content": {
+            "true": [
+              {
+                "name": "data-mapper-8",
+                "type": "normal",
+                "content": {}
+              },
+              {
+                "name": "data-mapper-1",
+                "type": "normal",
+                "content": {}
+              },
+              {
+                "name": "data-mapper-3",
+                "type": "normal",
+                "content": {}
+              },
+              {
+                "name": "salesforce-1",
+                "type": "normal",
+                "content": {}
+              }
+            ],
+            "false": []
+          }
+        },
+        {
+          "name": "boolean-condition-2",
+          "type": "branch",
+          "content": {
+            "true": [
+              {
+                "name": "data-mapper-7",
+                "type": "normal",
+                "content": {}
+              },
+              {
+                "name": "data-mapper-2",
+                "type": "normal",
+                "content": {}
+              },
+              {
+                "name": "data-mapper-4",
+                "type": "normal",
+                "content": {}
+              },
+              {
+                "name": "salesforce-2",
+                "type": "normal",
+                "content": {}
+              }
+            ],
+            "false": []
+          }
+        },
+        {
+          "name": "boolean-condition-3",
+          "type": "branch",
+          "content": {
+            "true": [
+              {
+                "name": "data-mapper-9",
+                "type": "normal",
+                "content": {}
+              },
+              {
+                "name": "data-mapper-5",
+                "type": "normal",
+                "content": {}
+              },
+              {
+                "name": "data-mapper-6",
+                "type": "normal",
+                "content": {}
+              },
+              {
+                "name": "salesforce-3",
+                "type": "normal",
+                "content": {}
+              }
+            ],
+            "false": []
+          }
+        }
+      ],
+      "steps": {
+        "salesforce-3": {
+          "title": "Create accounts",
+          "connector": {
+            "name": "salesforce",
+            "version": "7.5"
+          },
+          "operation": "batch_create_records",
+          "output_schema": {},
+          "error_handling": {},
+          "authentication": {
+            "group": "56d7e055-a5de-4961-b43d-b4b76fe10bde",
+            "title": "SMARTe Team's Salesforce account",
+            "service_icon": {
+              "icon_type": "url",
+              "value": "//s3.amazonaws.com/images.tray.io/static/service/icons/a8ff6c9514c35c853b350382534fb624.png"
+            },
+            "service_id": "3b5d0ee0-d143-40cf-8ef5-a76ccb4614b1",
+            "auth_app_id": "d403c9c6-282b-4b8c-ad02-1655ebccb166",
+            "scopes": [
+              "refresh_token",
+              "full"
+            ]
+          },
+          "properties": {
+            "error_handling": {
+              "type": "string",
+              "value": "rollback_fail"
+            },
+            "object": {
+              "type": "string",
+              "value": "Account"
+            },
+            "batch_create_list": {
+              "type": "jsonpath",
+              "value": "$.steps.data-mapper-6"
+            }
+          }
+        },
+        "data-mapper-1": {
+          "title": "Map leads",
+          "connector": {
+            "name": "data-mapper",
+            "version": "3.5"
+          },
+          "operation": "map_objects",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "include_unmapped": {
+              "type": "boolean",
+              "value": false
+            },
+            "include_nulls": {
+              "type": "boolean",
+              "value": true
+            },
+            "include_empty_strings": {
+              "type": "boolean",
+              "value": true
+            },
+            "data": {
+              "type": "jsonpath",
+              "value": "$.steps.trigger.body.leads"
+            },
+            "mapping": {
+              "type": "jsonpath",
+              "value": "$.steps.data-mapper-8"
+            }
+          }
+        },
+        "data-mapper-6": {
+          "title": "Map to SFDC input list",
+          "connector": {
+            "name": "data-mapper",
+            "version": "3.5"
+          },
+          "operation": "map_objects_to_list",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "data": {
+              "type": "jsonpath",
+              "value": "$.steps.data-mapper-5"
+            },
+            "field_key": {
+              "type": "string",
+              "value": "name"
+            },
+            "value_key": {
+              "type": "string",
+              "value": "value"
+            }
+          }
+        },
+        "boolean-condition-2": {
+          "title": "Is Contact mapped?",
+          "connector": {
+            "name": "boolean-condition",
+            "version": "2.2"
+          },
+          "operation": "boolean_condition",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "conditions": {
+              "type": "array",
+              "value": [
+                {
+                  "type": "object",
+                  "value": {
+                    "comparison_type": {
+                      "type": "string",
+                      "value": "==="
+                    },
+                    "value2": {
+                      "type": "boolean",
+                      "value": true
+                    },
+                    "value1": {
+                      "type": "jsonpath",
+                      "value": "$.config.map_contact"
+                    }
+                  }
+                }
+              ]
+            },
+            "strictness": {
+              "type": "string",
+              "value": "All"
+            }
+          }
+        },
+        "data-mapper-2": {
+          "title": "Map contacts",
+          "connector": {
+            "name": "data-mapper",
+            "version": "3.5"
+          },
+          "operation": "map_objects",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "include_unmapped": {
+              "type": "boolean",
+              "value": false
+            },
+            "include_nulls": {
+              "type": "boolean",
+              "value": true
+            },
+            "include_empty_strings": {
+              "type": "boolean",
+              "value": true
+            },
+            "data": {
+              "type": "jsonpath",
+              "value": "$.steps.trigger.body.contacts"
+            },
+            "mapping": {
+              "type": "jsonpath",
+              "value": "$.steps.data-mapper-7"
+            }
+          }
+        },
+        "data-mapper-5": {
+          "title": "Map accounts",
+          "connector": {
+            "name": "data-mapper",
+            "version": "3.5"
+          },
+          "operation": "map_objects",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "include_unmapped": {
+              "type": "boolean",
+              "value": false
+            },
+            "include_nulls": {
+              "type": "boolean",
+              "value": true
+            },
+            "include_empty_strings": {
+              "type": "boolean",
+              "value": true
+            },
+            "data": {
+              "type": "jsonpath",
+              "value": "$.steps.trigger.body.accounts"
+            },
+            "mapping": {
+              "type": "jsonpath",
+              "value": "$.steps.data-mapper-9"
+            }
+          }
+        },
+        "data-mapper-9": {
+          "title": "Convert array mapping to object",
+          "connector": {
+            "name": "data-mapper",
+            "version": "3.5"
+          },
+          "operation": "map_list_to_object",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "field_key": {
+              "type": "string",
+              "value": "key"
+            },
+            "field_value": {
+              "type": "string",
+              "value": "value"
+            },
+            "data": {
+              "type": "jsonpath",
+              "value": "$.config.account_mapping"
+            }
+          }
+        },
+        "boolean-condition-1": {
+          "title": "Is Lead mapped?",
+          "connector": {
+            "name": "boolean-condition",
+            "version": "2.2"
+          },
+          "operation": "boolean_condition",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "conditions": {
+              "type": "array",
+              "value": [
+                {
+                  "type": "object",
+                  "value": {
+                    "value1": {
+                      "type": "jsonpath",
+                      "value": "$.config.map_lead"
+                    },
+                    "comparison_type": {
+                      "type": "string",
+                      "value": "==="
+                    },
+                    "value2": {
+                      "type": "boolean",
+                      "value": true
+                    }
+                  }
+                }
+              ]
+            },
+            "strictness": {
+              "type": "string",
+              "value": "All"
+            }
+          }
+        },
+        "data-mapper-4": {
+          "title": "Map to SFDC input list",
+          "connector": {
+            "name": "data-mapper",
+            "version": "3.5"
+          },
+          "operation": "map_objects_to_list",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "data": {
+              "type": "jsonpath",
+              "value": "$.steps.data-mapper-2"
+            },
+            "field_key": {
+              "type": "string",
+              "value": "name"
+            },
+            "value_key": {
+              "type": "string",
+              "value": "value"
+            }
+          }
+        },
+        "data-mapper-8": {
+          "title": "Convert array mapping to object",
+          "connector": {
+            "name": "data-mapper",
+            "version": "3.5"
+          },
+          "operation": "map_list_to_object",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "field_key": {
+              "type": "string",
+              "value": "key"
+            },
+            "field_value": {
+              "type": "string",
+              "value": "value"
+            },
+            "data": {
+              "type": "jsonpath",
+              "value": "$.config.lead_mapping"
+            }
+          }
+        },
+        "salesforce-1": {
+          "title": "Create leads",
+          "connector": {
+            "name": "salesforce",
+            "version": "7.5"
+          },
+          "operation": "batch_create_records",
+          "output_schema": {},
+          "error_handling": {},
+          "authentication": {
+            "group": "56d7e055-a5de-4961-b43d-b4b76fe10bde",
+            "title": "SMARTe Team's Salesforce account",
+            "service_icon": {
+              "icon_type": "url",
+              "value": "//s3.amazonaws.com/images.tray.io/static/service/icons/a8ff6c9514c35c853b350382534fb624.png"
+            },
+            "service_id": "3b5d0ee0-d143-40cf-8ef5-a76ccb4614b1",
+            "auth_app_id": "d403c9c6-282b-4b8c-ad02-1655ebccb166",
+            "scopes": [
+              "refresh_token",
+              "full"
+            ]
+          },
+          "properties": {
+            "error_handling": {
+              "type": "string",
+              "value": "rollback_fail"
+            },
+            "object": {
+              "type": "string",
+              "value": "Lead"
+            },
+            "batch_create_list": {
+              "type": "jsonpath",
+              "value": "$.steps.data-mapper-3"
+            }
+          }
+        },
+        "data-mapper-3": {
+          "title": "Map to SFDC input list",
+          "connector": {
+            "name": "data-mapper",
+            "version": "3.5"
+          },
+          "operation": "map_objects_to_list",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "data": {
+              "type": "jsonpath",
+              "value": "$.steps.data-mapper-1"
+            },
+            "field_key": {
+              "type": "string",
+              "value": "name"
+            },
+            "value_key": {
+              "type": "string",
+              "value": "value"
+            }
+          }
+        },
+        "salesforce-2": {
+          "title": "Create contacts",
+          "connector": {
+            "name": "salesforce",
+            "version": "7.5"
+          },
+          "operation": "batch_create_records",
+          "output_schema": {},
+          "error_handling": {},
+          "authentication": {
+            "group": "56d7e055-a5de-4961-b43d-b4b76fe10bde",
+            "title": "SMARTe Team's Salesforce account",
+            "service_icon": {
+              "icon_type": "url",
+              "value": "//s3.amazonaws.com/images.tray.io/static/service/icons/a8ff6c9514c35c853b350382534fb624.png"
+            },
+            "service_id": "3b5d0ee0-d143-40cf-8ef5-a76ccb4614b1",
+            "auth_app_id": "d403c9c6-282b-4b8c-ad02-1655ebccb166",
+            "scopes": [
+              "refresh_token",
+              "full"
+            ]
+          },
+          "properties": {
+            "error_handling": {
+              "type": "string",
+              "value": "rollback_fail"
+            },
+            "object": {
+              "type": "string",
+              "value": "Contact"
+            },
+            "batch_create_list": {
+              "type": "jsonpath",
+              "value": "$.steps.data-mapper-4"
+            }
+          }
+        },
+        "boolean-condition-3": {
+          "title": "Is Account mapped?",
+          "connector": {
+            "name": "boolean-condition",
+            "version": "2.2"
+          },
+          "operation": "boolean_condition",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "conditions": {
+              "type": "array",
+              "value": [
+                {
+                  "type": "object",
+                  "value": {
+                    "comparison_type": {
+                      "type": "string",
+                      "value": "==="
+                    },
+                    "value2": {
+                      "type": "boolean",
+                      "value": true
+                    },
+                    "value1": {
+                      "type": "jsonpath",
+                      "value": "$.config.map_account"
+                    }
+                  }
+                }
+              ]
+            },
+            "strictness": {
+              "type": "string",
+              "value": "All"
+            }
+          }
+        },
+        "data-mapper-7": {
+          "title": "Convert array mapping to object",
+          "connector": {
+            "name": "data-mapper",
+            "version": "3.5"
+          },
+          "operation": "map_list_to_object",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {
+            "field_key": {
+              "type": "string",
+              "value": "key"
+            },
+            "field_value": {
+              "type": "string",
+              "value": "value"
+            },
+            "data": {
+              "type": "jsonpath",
+              "value": "$.config.contact_mapping"
+            }
+          }
+        },
+        "trigger": {
+          "title": "Webhook",
+          "connector": {
+            "name": "webhook",
+            "version": "2.3"
+          },
+          "operation": "fire_and_forget",
+          "output_schema": {},
+          "error_handling": {},
+          "properties": {}
+        }
+      },
+      "dependencies": []
+    }
+  ]
+}
